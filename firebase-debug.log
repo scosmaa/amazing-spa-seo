@@ -1,0 +1,73 @@
+[debug] [2018-05-24T17:11:56.635Z] ----------------------------------------------------------------------
+[debug] [2018-05-24T17:11:56.637Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2018-05-24T17:11:56.637Z] CLI Version:   3.18.4
+[debug] [2018-05-24T17:11:56.637Z] Platform:      linux
+[debug] [2018-05-24T17:11:56.637Z] Node Version:  v7.10.1
+[debug] [2018-05-24T17:11:56.637Z] Time:          Thu May 24 2018 19:11:56 GMT+0200 (CEST)
+[debug] [2018-05-24T17:11:56.638Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-24T17:11:56.649Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-24T17:11:56.649Z] > authorizing via signed-in user
+[debug] [2018-05-24T17:11:56.651Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-05-24T17:11:56.652Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/g19qFO_d_9nq4Z87IKslYs6fpcbSCfUx8U3RzFbWfe8',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Thu May 24 2018 19:11:56 GMT+0200 (CEST)
+[debug] [2018-05-24T17:11:57.175Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-24T17:11:57.180Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/amazing-spa-seo  
+  
+ Thu May 24 2018 19:11:57 GMT+0200 (CEST)
+[debug] [2018-05-24T17:11:58.347Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-24T17:11:58.348Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/amazing-spa-seo/tokens  
+  
+ Thu May 24 2018 19:11:58 GMT+0200 (CEST)
+[debug] [2018-05-24T17:11:59.494Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-24T17:11:59.496Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/amazing-spa-seo  
+  
+ Thu May 24 2018 19:11:59 GMT+0200 (CEST)
+[debug] [2018-05-24T17:12:00.937Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/scosmaa/Projects/amazing-spa-seo'...
+[info] 
+[debug] [2018-05-24T17:12:00.941Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/267643819865/clients/_:getWebAppConfig  
+  
+ Thu May 24 2018 19:12:00 GMT+0200 (CEST)
+[debug] [2018-05-24T17:12:02.370Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: /
+[info] ✔  hosting: Local server: http://localhost:5000
+
+[debug] [2018-05-24T17:40:33.722Z] ----------------------------------------------------------------------
+[debug] [2018-05-24T17:40:33.724Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2018-05-24T17:40:33.724Z] CLI Version:   3.18.4
+[debug] [2018-05-24T17:40:33.724Z] Platform:      linux
+[debug] [2018-05-24T17:40:33.724Z] Node Version:  v7.10.1
+[debug] [2018-05-24T17:40:33.724Z] Time:          Thu May 24 2018 19:40:33 GMT+0200 (CEST)
+[debug] [2018-05-24T17:40:33.724Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-05-24T17:40:33.732Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-05-24T17:40:33.732Z] > authorizing via signed-in user
+[debug] [2018-05-24T17:40:33.734Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/amazing-spa-seo  
+  
+ Thu May 24 2018 19:40:33 GMT+0200 (CEST)
+[debug] [2018-05-24T17:40:34.510Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-24T17:40:34.511Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/amazing-spa-seo/tokens  
+  
+ Thu May 24 2018 19:40:34 GMT+0200 (CEST)
+[debug] [2018-05-24T17:40:35.208Z] <<< HTTP RESPONSE 200
+[debug] [2018-05-24T17:40:35.209Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/amazing-spa-seo  
+  
+ Thu May 24 2018 19:40:35 GMT+0200 (CEST)
+[debug] [2018-05-24T17:40:36.068Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/scosmaa/Projects/amazing-spa-seo'...
+[info] 
+[debug] [2018-05-24T17:40:36.070Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/267643819865/clients/_:getWebAppConfig  
+  
+ Thu May 24 2018 19:40:36 GMT+0200 (CEST)
+[debug] [2018-05-24T17:40:36.666Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: /
+[info] ✔  hosting: Local server: http://localhost:5000
+

@@ -1,38 +1,225 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amazin SPA SEO</title>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.0.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.0.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.0.2/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.0.2/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.0.2/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/5.0.2/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/5.0.2/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.0.2/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.0.2/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.0.2/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Amazing Spa Seo</a>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="/tiffany_torna_a_brillare">
+                TIFFANY TORNA A BRILLARE GRAZIE A UNA TRIMESTRALE OLTRE ALLE ATTESE E ALLA NUOVA COLLEZIONE PAPER FLOWERS
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/boeing_trimestrale_oltre_le_attese">
+                BOEING, TRIMESTRALE OLTRE LE ATTESE. MA ANALISTI CAUTI
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/microsoft_strizza_occhio_a_netflix">
+                MICROSOFT STRIZZA L'OCCHIO A NETFLIX
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/allegheny_technologies_trimestrale_record">
+                ALLEGHENY TECHNOLOGIES, TRIMESTRALE DA RECORD
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/paypal_compra_izettle">
+                PAYPAL COMPRA LA START UP SVEDESE IZETTLE
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/mastercard_non_teme_blockchain">
+                MASTERCARD NON TEME LA TECNOLOGIA BLOCKCHAIN
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 main-content">
+      </main>
+    </div>
+  </div>
+  <script>
+    var container = document.querySelector('.sidebar-sticky');
+
+    container.addEventListener('click', function (e) {
+      if (e.target != e.currentTarget) {
+        e.preventDefault();
+        history.pushState({data: e.target.pathname}, null, e.target.pathname);
+        handleContent(e.target.pathname);
       }
-    </style>
-  </head>
-  <body>
-    <ul>
-        <li><a href="/spa-example-with-good-seo">SPA example with SEO</a></li>
-    </ul>
-  </body>
+      e.stopPropagation();
+    }, false);
+
+    window.addEventListener('popstate', function (e) {
+      handleContent(e.state.data);
+    });
+
+    function handleContent(url) {
+      switch (url) {
+        case "/tiffany_torna_a_brillare":
+          showPage(contentData[0]);
+          break
+        case "/boeing_trimestrale_oltre_le_attese":
+          showPage(contentData[5]);
+          break
+        case "/microsoft_strizza_occhio_a_netflix":
+          showPage(contentData[1]);
+          break
+        case "/allegheny_technologies_trimestrale_record":
+          showPage(contentData[2]);
+          break
+        case "/paypal_compra_izettle":
+          showPage(contentData[3]);
+          break
+        case "/mastercard_non_teme_blockchain":
+          showPage(contentData[4]);
+          break
+        default:
+          showPage();
+          break;
+      }
+    }
+
+    function showPage(data) {
+      var content = document.querySelector('.main-content');
+      content.innerHTML = '';
+      document.title = '';
+
+      if (!data) {
+        content.innerHTML =
+          "Questo sito contiene delle prove per verificare le principali tecniche di indicizzazione nell'ambito delle Single Page Application";
+          document.title = "Amazing SPA Seo";
+          return
+      }
+      
+      var article = '<h1>' + data.subject + '</h1>';
+      content.innerHTML = article;
+      document.title = 'NEWS - ' + data.subject;
+    };
+    
+    var contentData = [{
+      "id": 21727,
+      "subject": "TIFFANY TORNA A BRILLARE GRAZIE A UNA TRIMESTRALE OLTRE ALLE ATTESE E ALLA NUOVA COLLEZIONE PAPER FLOWERS",
+      "body": "Tiffany vola a Wall Street grazie a una trimestrale oltre le attese. Le azioni hanno guadagnato oltre 23 punti percentuali nella giornata di mercoledì alla Borsa di New York, scambiate a 126,05 dollari, segnando il rialzo più significativo dal 2001. La cura italiana fa bene al gruppo americano dei gioielli di lusso. Nel primo trimestre le vendite globali sono salite del 15% a un miliardo di dollari. L'utile netto è salito a 142 milioni di dollari, sopra le attese degli analisti. In Europa il fatturato è cresciuto del 13% a 107 milioni di dollari, nelle Americhe del 9% a 425 milioni, nell'Asia-pacifico del 28% a 329 milioni grazie alla Cina continentale, in Giappone c'è stato un balzo del 17% a 151 milioni. I risultati trimestrali hanno convinto il gruppo ad alzare le stime per tutto l’anno.\n\nLe vendite comparate sono salite del 10%, meglio del +4,6% calcolato dal mercato. Soltanto in Europa questo dato non è cresciuto per via delle spese in marketing, della forza della valuta e dell'introduzione di una nuova collezione firmata dallo stilista americano Reid Krakoff, disponibile per ora solo negli Usa (arriverà in Europa a luglio). Per Tiffany si tratta comunque di una svolta positiva, specialmente dopo che l'anno scorso aveva dovuto fare i conti con il pressing di un investitore attivista e con l'uscita di Kowalski a febbraio 2017.\n\nMolto soddisfatto il nuova ad Alessandro Bogliolo, che ha annunciato un buy back da 1 miliardo di dollari, altra novità che ha dato slancio alle azioni. \"Siamo particolarmente soddisfatti degli incoraggianti risultati di vendite registrati in tutte i Paesi dove siamo presenti e in tutte le categorie di prodotto – ha commentato Bogliolo lasciando intendere che la crescita proseguirà anche nei mesi a venire – e restiamo focalizzati nel riuscire a realizzare una crescita sostenibile a parità di perimetro dei ricavi, dei margini operativi e dell'utile\".\n\nBogliolo, che proviene da Diesel con un passato in Bulgari, ha portato in azienda nuovi designer puntando su nuove collezioni. Il 1° maggio ha debuttato sul mercato americano Paper Flowers. Si tratta della collezione di esordio di Reed Krakoff come direttore artistico di Tiffany & Co. Come suggerisce il nome la collezione si ispira ai fiori di carta. I prezzi partono da 2.500 dollari per arrivare a 75.000 dollari. Tra i pezzi più preziosi un collier con più di 68 carati di diamanti a forma di pera e taglio brillante, intervallati da fiori di platino. Secondo Tiffany Paper Flowers è il più grande lancio di gioielli dalla collezione Tiffany Keys del 2009. Per festeggiare il rilascio della collezione Krakoff e il suo team hanno fatto dipingere del colore Tiffany Blue alcune stazioni della metropolitana e taxi di New York. Reed Krakoff ha spiegato che a ispirarlo è stato il personaggio di Audrey Hepburn in \"Colazione da Tiffany\" e il suo modo di vivere la città di New York. \n\nLa linea è parte centrale della strategia di Tiffany di introdurre sul mercato \"più collezioni e più spesso\", per stimolare i consumatori. Il designer americano disegnerà anche una serie di prodotti tra cui borse, accessori in pelle e argento, occhiali da sole, portachiavi, penne, set per bambini e oggetti per la tavola in porcellana, vetro, e cristallo.\n\nIl rinnovo dell’offerta è il cuore della strategia annunciate da Bogliolo, che, per il nuovo corso, scommette sull’evoluzione del brand message, della presentazione in store e sullo sviluppo omnichannel.\n\nGli analisti premiano la nuova strategia. Morningstar conferma la stima del fair value a $88 e continua a scommettere sulla forza del marchio. \"Ci sono pochi brand che riescono ad avere un tale riconoscimento globale. E Tiffany è uno di questi grazie alle collezioni longeve, alle scatole blu immediatamente riconoscibili e al colore \"blue Tiffany\". A lungo termine Morningstar ritiene che ci possa essere una crescita a doppia cifra grazie ad acquisti più frequenti da parte dei clienti.\n\nSegnali positivi anche da Stock Invest che vede un tasso di crescita ancora più forte. \"Riteniamo che il livello attuale offra una buona opportunità di acquisto in quanto vi è una buona probabilità che questo titolo possa performare bene a breve termine\".\n\nTicker: TIF \nISIN: US8865471085 \nPrezzo 23/5/2018: 126,05 USD\n\nAnalisti Morningstar: \nFair Value: 88 USD \nConsider Buy: 61,60 USD \nConsider Sell: 118,80 USD\n\nSecondo Morningstar il titolo è oggi sopravalutato del 16%\nSi consigliano strategie ribassiste\n\nValutazione Stock Invest\nDa Hold Accumulate a Strong Buy Candidate\n\nConsensus Factset:\nBUY: 16 su 28 analisti\nHOLD: 12 su 28 analisti\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "44897806_14594240734158_rId4_mod2.jpg",
+      "timestamp": 1527180139,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:M2QXKL-S-US.FCST",
+      "published": 1527170580,
+      "showInCarousel": true,
+      "strpublished": "Thu May 24 2018"
+    }, {
+      "id": 21376,
+      "subject": "MICROSOFT STRIZZA L'OCCHIO A NETFLIX CHE INGAGGIA GLI OBAMA COME TALENT SCOUT. I DUBBI DEGLI ANALISTI",
+      "body": "Tutto iniziò con la vendita di DVD. Oggi Netflix è la più popolare piattaforma di distribuzione di film online con 125 milioni di abbonati in tutto il mondo per la maggior parte fuori dagli Stati Uniti. La sua ascesa non ha eguali e sta diventando l'oggetto del desiderio di altri big come Microsoft e Apple, stando ai rumors.\n\nIl suo modello di business fa gola. \"Ora che siamo la prima tv globale - affermava tre anni fa a Roma il fondatore di Netflix Reed Hastings durante la presentazione del suo nuovo \"palinsesto europeo\" - tutti si sono accorti di noi. Tutti vogliono fare quello che hai sempre fatto\". I rivali hanno capito che per competere ad armi pari devono imparare a usare internet come rete di distribuzione di contenuti audio-video. E infatti gli analisti affermano che entro il 2022 tutte le maggiori reti televisive statunitensi avranno il loro servizio in streaming, andranno diretti sul consumatore.\n\nMa non solo le reti tv Usa. Il primo a farsi avanti potrebbe essere Microsoft che tenterà di acquistare Netflix secondo quanto prevede Porter Bibb, analista senior alla Media Tech Capital Partners con 40 anni di esperienza nel settore. Il gigante della tecnologia con base a Washington non possiede contenuti multimediali e per questo è intenzionato a entrare nel settore dello streaming content. La previsione di Bibb su Microsoft e Netflix ptrebbe arrivare dopo un altro importante accordo di fusione. Quello di Walt Disney per acquisire la maggior parte delle attività della Twenty-First Century Fox. \n\nL'acquisizione di Microsoft potrebbe rivelarsi una delle più costose nella storia. Per Netflix significherebbe avere ancora nuove risorse da investire sui contenuti, attirando ancora più talenti. Hastings è stato per cinque anni nel board di Microsoft, fino al 2012, lasciando poi l'incarico per concentrarsi di più sulla piattaforma streaming. \n\nDisney è già un passo avanti. Entro l'anno prossimo per vedere alcuni dei suoi contenuti come gli Avengers, Guerre Stellari o Frozen bisognerà attivare un abbonamento. Il progetto è quello di tagliare fuori i concorrenti, o chiedere licenze a prezzi stellari. In sostanza si tagliano gli intermediari, come ha fatto la stessa Disney con la sua rete sportiva Espn, e si va direttamente sul cliente online aumentando così i ricavi. \n\nPer i piccoli distributori online il rischio è quello di ritrovarsi tra un paio di anni schiacciati in un mercato che si sta crescendo smisuratamente. L'asso nella manica sarà la capacità di generare contenuti originali, di passare da distributori a produttori. Netflix questo lo sa benissimo e infatti nel suo ultimo rapporto trimestrale prevede di aumentare la spesa nei contenuti da $ 7,5 miliardi a $ 8 miliardi quest'anno.\n\nLa piattaforma streaming sta mettendo in campo l'artiglieria pesante. Barack e Michelle Obama rispettivamente ex Presidente degli Stati Uniti ed ex First Lady, hanno firmato un accordo con Netflix in cui si impegnano – ancora non si sa quando, né in che misura – a seguire la produzione di serie e film, originali e non, probabilmente anche documentari, secondo quanto rivela CNBC. \n\nI dati parlano da soli. Netflix, con un valore di mercato di circa 142 miliardi di dollari, ha visto le sue azioni salire di oltre il 100% negli ultimi 12 mesi. Potrebbe sembrare un obiettivo di acquisizione strano per Microsoft. Ma alcuni analisti da tempo ritengono che l'enorme liquidità della Microsoft potrebbe consentire a Netflix di continuare a pagare profumatamente gli studi televisivi e cinematografici hollywoodiani per i contenuti.\n\nLa forza di Netflix, secondo l'analista di Morningstar Neil Macker, sta nella sua capacità di individuare i gusti e le preferenze degli utenti. \"Raccoglie questi dati e li sfrutta per acquistare contenuti e produrre materiale originale. Crediamo che questi dati aiuteranno Netflix a rimanere il più grande fornitore negli Stati Uniti e ad avere successo nei nuovi mercati\", spiega l'analista che però non nasconde qualche perplessità sul business model. \n\nNonostante la crescita degli abbonati 125 milioni totali, grazie all'aumento di 7,4 milioni di abbonamenti, di cui 5,5 milioni a livello internazionale e 1,9 milioni negli Stati Uniti, gli investitori temono che Netflix non riuscirà a mantenere i tassi di crescita. A spingere i conti nei primi tre mesi è stato anche l'aumento dei prezzi, saliti del 14 per cento. Nonostante un primo trimestre in utile (+63%, 290 milioni di dollari), il cash flow di Netflix nei primi tre mesi nell'anno è risultato negativo per 287 milioni di dollari. Da non sottovalutare, avverte l'analista anche la crescente concorrenza dei rivali, Disney e Amazon in primis. \n\nMorningstar sta mantenendo la stima del fair value a $ 90. Per Stock Invest ci sono diversi segnali positivi e prevede ulteriori guadagni nei prossimi 3 mesi. In conclusione il modello di business, secondo gli analisti, non è sostenibile nel lungo periodo.\n\nTicker: NFLX\nISIN: US64110L1061\nPrice 21/5/2018: 331,82 USD\n\nPer gli analisti Morningstar:\nFair Value: 90 USD\nConsider Buy: 45 USD\nConsider Sell: 157,50 USD\n\nSecondo Morningstar il titolo è oggi sopravvalutata del 260%\nSi consigliano strategie ribassista\n\nEvaluation di Stock Invest:\nAbbiamo aggiornato la nostra raccomandazione per questo titolo dall'ultima valutazione da Buy Candidate a Strong Buy Candidate.\n\nFactset ha raccolto le seguenti stime degli analisti:\nBUY: 20 su 44\nOVERWEIGHT: 5 su 44\nHOLD: 16 su 44\nSELL: 3 su 44\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "netflixstreaming-2red.jpg",
+      "timestamp": 1527083291,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:BT4517-S-US.FCST",
+      "published": 1526980140,
+      "showInCarousel": false,
+      "strpublished": "Tue May 22 2018"
+    }, {
+      "id": 21257,
+      "subject": "ALLEGHENY TECHNOLOGIES, TRIMESTRALE DA RECORD. ANALISTI OTTIMISTI",
+      "body": "Allegheny Technologies Incorporated impiega tecnologie innovative per proporre sui mercati di tutto il mondo una vasta gamma di soluzioni che utilizzano materiali speciali. I principali mercati sono l'industria aerospaziale e la difesa, l'industria chimica di processo/petrolifera e del gas naturale, dell'energia elettrica, biomedicale, automotive, delle attrezzature alimentari, dell'edilizia e delle attività estrattive.\n\nE' leader di mercato nella produzione di telai per aerei e componenti per motori a reazione commerciali e militari. Tra i prodotti figurano titanio e leghe di titanio, leghe e superleghe a base di nichel, particolari forgiati o prodotti per fusione, leghe di zirconio, afnio, niobio, lamierino magnetico a grani orientati e acciai inossidabili e speciali.\n\n\"Allegheny Technologies ha pubblicato risultati impressionanti nel primo trimestre, guidati in gran parte dai forti volumi dei motori a reazione di nuova generazione. La società rimane sulla buona strada per raggiungere una sostanziale espansione dei margini nel 2018. Avendo migliorato le nostre previsioni di profitto a breve termine, stiamo innalzando la nostra stima del fair value a $ 31 per azione da $ 28\", spiega l'analista di Morningstar Andrew Lane.\n\n\"Allegheny Technology deve la sua elevata profittabilità alla leadership in una nicchia dell’industria siderurgica che lavora per soddisfare le esigenze specifiche delle aziende nel settore aerospaziale ed energetico\", spiega l'analista di Morningstar. \"La crescita del traffico aereo spingerà la domanda di nuovi aeromobili, mentre le compagnie petrolifere avranno bisogno di nuovi materiali per sperimentare tecniche diverse di estrazione di idrocarburi dal suolo. E questo promette di spingere il fatturato a un ritmo del 5% nei prossimi cinque anni”, spiegava l'analista Andrew Lane in una nota del 14 marzo 2017. \n\nPer Stock Invest ci sono diversi segnali postivi a breve termine insieme a una tendenza generale positiva. \"Riteniamo che il livello attuale offra una buona opportunità di acquisto in quanto vi è una buona probabilità che questo titolo possa performare bene a breve termine\".\n\nGli analisti si aspettano che lo slancio positivo continui per tutto il 2018. Gli investitori guardano positivamente anche all'avvio della joint venture Allegheny & Tsingshan Stainless, che inizierà a vendere prodotti nella seconda metà del 2018. Tsingshan Group è leader mondiale di prodotti in acciaio inossidabile laminati, con una produzione di 5,5 milioni di tonnellate nel 2016.\n\nTicker: ATI\nISIN: US01741R1023 \nPrice 18/5/2018: 28,55 USD\n\nPer gli analisti Morningstar:\n\nPrevious Fair Value Estimate: $28\nCurrent Fair Value Estimate: $31\nPremium/Discount to Fair Value Estimate (as of 5/3/18):\n-13%\n\nFair Value: 31 USD\nConsider Buy: 18,60 USD\nConsider Sell: 48,05 USD\n\nSecondo Morningstar il titolo è oggi sottovalutato del 8%\nSi consigliano strategie rialziste\n\nEvaluation di Stock Invest: \nAbbiamo aggiornato la nostra raccomandazione per questo titolo da Hold/Accumulate a Buy/Candidate\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "t1_red2.jpg",
+      "timestamp": 1527072487,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:TD0RLZ-S-US.FCST",
+      "published": 1526896440,
+      "showInCarousel": false,
+      "strpublished": "Mon May 21 2018"
+    }, {
+      "id": 21240,
+      "subject": "PAYPAL COMPRA LA START UP SVEDESE IZETTLE PER 2,2 MILIARDI DI DOLLARI. È LA SUA PIÙ GRANDE OPERAZIONE DI SEMPRE",
+      "body": "PayPal ha annunciato un accordo per l'acquisto della start up svedese iZettle, società del 'mobile payment' per 2,2 miliardi dollari. La statunitense PayPal, scorporata da eBay tre anni fa, ha dichiarato che l'operazione servirà a rafforzare la sua piattaforma per la gestione dei pagamenti delle piccole imprese, in particolare in Europa e America Latina. La 'giovane' azienda svedese era pronta per il debutto sul mercato azionario.\n\n\"Le piccole imprese sono il motore dell'economia globale e stiamo continuando ad espandere la nostra piattaforma per aiutarle a competere e vincere online, negli store e via cellulare\", ha detto in una nota l'amministratore delegato di PayPal, Dan Schulman.\n\nLa piattaforma iZettle per la gestione delle transazioni al dettaglio è utilizzata da quasi mezzo milione di commercianti, secondo PayPal. E' stata fondata nel 2010, ha sede a Stoccolma e conta oltre 500 dipendenti. I suoi più grandi mercati sono il Regno Unito, il Brasile e la Svezia.\n\nCon questa operazione PayPal sfida Square, una piattaforma di pagamenti co-fondata dall'amministratore delegato di Twitter, Jack Dorsey, che viene utilizzata per pagare con carta di credito tramite smartphone o tablet. Ad acquisizione completata, nel terzo trimestre di quest'anno, dopo il via libera dei regolatori, PayPal guadagnerà l'accesso a 11 mercati con il potenziale di un'ulteriore espansione geografica in altri grandi mercati, Stati Uniti compresi. \n\n\"Pensiamo che l'accordo abbia senso da un punto di vista strategico\", spiega l'analista di Morningstar Jim Sinegal. \"E' da tempo che PayPal tenta di diventare un giocatore nel punto di vendita fisico. Inoltre la domanda di nuove soluzioni di pagamento da parte delle piccole imprese sta crescendo ad un livello esponenziale\".\n\n\"I processi di elaborazione di PayPal, la presenza globale e la sua lunga esperienza con le piccole imprese dovrebbero aiutare la società a crescere nel mercato\".Per questo spiega l'analista di Morningstar \"non stiamo cambiando la nostra stima del fair value\".\n\nPayPal vanta un enorme potenziale. Non solo può contare sulla forza del marchio ma anche su \"una rete di utenti e commercianti. Le sue mosse aggressive per quanto riguarda i pagamenti mobile stanno dando i suoi frutti\", spiega l'analista in una nota del 20 marzo. \"PayPal è noto per il suo portafoglio digitale, ma pensiamo che la sua capacità nell'elaborazione dei pagamenti commerciali sia la chiave per una continua crescita\".\n\n\"Inoltre i pagamenti sono ancora in espansione ad un ritmo sostenuto. Nel 2017 il 46% dei ricavi di PayPal provenivano fuori dagli Stati Uniti\", precisa l'analista.\n\nSegnali positivi a breve termine anche per Stock Invest. \"Nonostante il trend discendente del titolo, riteniamo che il livello attuale offra una buona opportunità di acquisto perchè ci sono buone possibilità che questo titolo performi bene a breve termine\".\n\nSeeking Alpha sottolinea l'importanza dell'espansione di PayPal nei mercati emergenti soprattutto in India. Il CFO di PayPal John Rainey ha sottolineato l'enorme potenziale di questo mercato. \"Due miliardi di persone in tutto il mondo non possiedono cose scontate come un conto bancario, un mutuo per la casa, servizi finanziari tradizionali. Ma l'aspetto che li unisce è che il 70% di loro ha un dispositivo mobile\". \nPayPal scommette sull'India ma non è l'unica, anche altri giganti come Walmart e Amazon hanno intrapreso questa strada. \"Grazie al dispositivo mobile diamo a queste persone la possibilità di avere nel palmo di una mano il potere di una filiale bancaria e diamo a loro la possibilità di entrare nel mondo dell'e-commerce e fare acquisti online\", ha spiegato il CFO alla CNBC.\n\nIn conclusione per Seeking Alpha le prospettive future di PayPal sono più che positive. L'espansione in India rappresenta un driver per la società che continuerà a stupire gli investitori.\n\nTicker: PYPL\nISIN: US70450Y1038\nPrice 18/5/2018: 80,79 USD\n\nPer gli analisti Morningstar:\nFair Value: 59 USD\nConsider Buy: 29.50 USD\nConsider Sell: 103.25 USD\n\nSecondo Morningstar il titolo è oggi sopravvalutato del 37%\nSi consigliano strategie ribassiste\n\nEvaluation di Stock Invest:\nSegnali positivi a breve termine. Nonostante il trend discendente del titolo, riteniamo che il livello attuale offra una buona opportunità di acquisto perchè ci sono buone possibilità che questo titolo performi bene a breve termine.\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "tech_red.jpg",
+      "timestamp": 1526996699,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:NGRNZY-S-US.FCST",
+      "published": 1526892240,
+      "showInCarousel": false,
+      "strpublished": "Mon May 21 2018"
+    }, {
+      "id": 21127,
+      "subject": "MASTERCARD NON TEME LA TECNOLOGIA BLOCKCHAIN. LA SICUREZZA NEI PAGAMENTI È LA SUA CARTA VINCENTE",
+      "body": "Il Blockchain, che sta alla base dei Bitcoin, spaventa il settore finanziario. La nuova tecnologia minaccia di rivoluzionare l'industria dei sistemi di pagamento e dell'intermediazione nelle transazioni di asset ma secondo gli analisti di Morningstar il Moat (vantaggio competitivo) delle società leader del settore farà da ostacolo al cambiamento. \n\n\"Il Bitcoin è solo il primo passo verso la rivoluzione del Blockchain. Grazie alla decentralizzazione delle operazioni, alla riduzione dei costi di transazione e alla maggior sicurezza, la nuova tecnologia della 'catena di blocchi' minaccia di cambiare il volto al settore finanziario, tecnologico e dei consumi\".\n\nSocietà come Mastercard ma anche Visa, American Express e PayPal sono potenzialmente minacciate dalla tecnologia Blockchain, ma gli analisti di Morningstar mettono in evidenza come \"il Moat (vantaggio competitivo) costruito da queste aziende sia difficilmente attaccabile. Nell’industria dei pagamenti il successo si costruisce grazie ad un ampio network di utenti che utilizzano la propria carta. Più è estesa la propria rete, più è alto il valore della stessa, e dunque più facilmente le aziende sono in grado di attrarre nuovi soggetti creando un circolo virtuoso che si autoalimenta (effetto network)\".\n\n\"A nostro avviso la rete Mastercard funziona come intermediario chiave tra le banche\", afferma l'analista Jim Sinegal. \"La società e i rivali si stanno sempre più affermando grazie allo standard di sicurezza offerto all'intero settore dei pagamenti. Non vediamo altre aziende in grado di assumere questo ruolo\".\n\nMastercard ha chiuso il primo trimestre 2018 con ricavi pari a 3,58 miliardi di dollari, in rialzo dai 2,73 miliardi dello stesso periodo dell'anno precedente e contro attese pari a 3,25 miliardi di dollari. Il trimestre è andato in archivio con un utile per azione pari a 1,41 dollari, 41 centesimi in più rispetto a 12 mesi prima. Depurando i conti dalle componenti non ricorrenti l'utile per azione è arrivato a 1,5 dollari, contro gli 1,01 dollari del medesimo periodo dell'anno precedente e contro attese pari a 1,25 dollari.\n\nSecondo Seeking Alpha nonostante Mastercard abbia registrato \"eccellenti risultati in termini di crescita del flusso di cassa e dei dividendi le sue azioni non sono a buon mercato. Per gli investitori a lungo termine Mastercard può rappresentare una buona scelta. Coloro che invece desiderano un maggiore margine di sicurezza dovrebbero attendere un ritracciamento\".\n\nPer Stock Invest \"ci sono diversi segnali negativi e questo dovrebbe portare a una raccomandazione di Sell ma noi consigliamo Hold o Accumulate in attesa di ulteriori sviluppi. A causa di alcuni piccoli\npunti deboli nel quadro tecnico abbiamo abbassato la nostra raccomandazione per questo titolo da Buy/Candidate a Hold/Accumulate\".\n\nTicker: MA\nISIN: US57636Q1040\nPrice 17/5/2018: 191,20 USD\n\nPer gli analisti Morningstar:\nFair Value: 156 USD\nConsider Buy: 109.20 USD\nConsider Sell: 210.60 USD\n\nSecondo Morningstar il titolo è oggi sopravvalutato del 23%\n\nSi consigliano strategie ribassiste\n\nEvaluation di Stock Invest\nRaccomandazione da Buy/Candidate a Hold/Accumulate.\n\nFactset ha raccolto le seguenti stime degli analisti:\nBUY: 29 SU 37\nOVERWEIGHT: 4 SU 37\nHOLD: 4 SU 37\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "shutterstock_1053751088_red2.jpg",
+      "timestamp": 1526987685,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:HLTYZF-S-US.FCST",
+      "published": 1526638440,
+      "showInCarousel": false,
+      "strpublished": "Fri May 18 2018"
+    }, {
+      "id": 21115,
+      "subject": "BOEING, TRIMESTRALE OLTRE LE ATTESE. MA ANALISTI CAUTI",
+      "body": "Il futuro di Boeing, tra le maggiori aziende produttrice di aerei, passa dai nuovi arerei commerciali 737 MAX e 777X. Con sede a Chicago, l'azienda compete con la rivale europea Airbus nell'aviazione commerciale e con Lockheed e Northrop nei sistemi per la difesa. Le vendite sono per il 70% derivate dagli aerei commerciali e per il 30% dal settore della difesa. Nel 2017 ha realizzato un fatturato di 93,4 miliardi di dollari.\n\nIl portafoglio di quasi 6.000 aerei consentirà a Boeing di incrementare la produzione futura. Gli ordini di 737 salgono a 57 al mese nel 2019, da circa 42 nel 2016. Morningstar prevede che Boeing consegnerà circa 810 aerei commerciali nel 2018 e 900 l'anno seguente. \"I ricavi nel 2017 si sono ridotti ma prevediamo una crescita annuale media di quasi il 6% nei prossimi cinque anni\", spiega l'analista di Morningstar Chris Higgins. Che aggiunge: \"Questa crescita, che sarà in gran parte guidata dal business degli aerei commerciali, dovrebbe aiutare a sostenere i margini operativi sul nostro periodo di previsione\". \"Nel medio termine - continua l'analista - la crescita degli utili arriverà dagli aeroplani commerciali, dove prevediamo margini superiori al 12% entro il 2019 e il 14% nel 2021\".\n\nBoeing ha chiuso il primo trimestre del 2018 con ricavi pari a 23,38 miiliardi di dollari, in rialzo rispetto ai 21,96 miliardi di 12 mesi prima e oltre le attese pari a 22,28 miliardi di dollari. Il periodo si è chiuso con un utile pari a 2,48 miliardi di dollari, in rialzo rispetto agli 1,58 miliardi dell'anno precedente. Su base unitaria l'utile per azione è stato pari a 4,15 dollari, ben oltre i 2,54 dollari dello stesso periodo dell'esercizio precedente. L'utile adjusted è stato pari a 3,64 dollari per azione, oltre i 2,58 delle attese. I vertici hanno migliorato le stime sull'utile per azione dell'intero 2018 da un range compreso tra 13,8 e 14 dollari a uno tra 14,3 e 14,5 dollari.\n\nIl colosso americano degli aerei ha anche annunciato l'acquisizione della divisione aerospaziale di KLX, un gruppo con sede a Wellington (Florida) per 4.250 milioni di dollari (3.543,8 milioni di euro). \"Il management di Boeing si aspetta che l'operazione abbia un impatto neutro sugli utili entro la fine del 2019, ma in crescita nel 2020\", spiega l'analista di Morningstar che però precisa: \"Anche se strategicamente importante, l'accordo non rappresenterà l'ago della bilancia per Boeing ecco perché abbiamo apportato solo piccole modifiche alla nostra stima del fair value a $ 308\".\n\nPer Seeking Alpha il ritiro degli Usa dall'accordo nucleare con l'Iran potrebbe avere degli effetti per Boeing. Trump ha minacciato sanzioni per chi fa affari con Teheran. \"Con le sanzioni Boeing rischierebbe un accordo con l'Iran stimato in $ 20 miliardi. Le azioni però non sono valutate sulla base di questo accordo ma rende comunque più difficoltosa la valutazione dei rendimenti\". \"Ad aprile la società ha registrato 5.900 ordini e l'accordo con l'Iran riguarda 100 ordini, quindi l'impatto è pressoché irrilevante da questo punto di vista\".\n\nPer Stock Invest ci sono molti segnali positivi da Boeing ma precisa: \"Non riteniamo che questi siano sufficienti per una raccomandazione Buy. Consigliamo di attendere ulteriori sviluppi\".\n\nTicker: BA\nISIN: US0970231058\nPrice 17/5/2018: 344,14 USD\n\nPer gli analisti Morningstar:\nFair Value: 309 USD\nConsider Buy: 185.40 USD\nConsider Sell: 478.95 USD\n\nSecondo Morningstar il titolo è oggi sopravvalutato del 10%\nSi consigliano strategie ribassiste\n\nEvaluation di Stock Invest\n\nMolti segnali positivi da Boeing Company, ma non riteniamo che questi siano sufficienti per una raccomandazione Buy. Consigliamo una posizione Hold o Accumulate in attesa di ulteriori sviluppi. Abbiamo aggiornato la nostra raccomandazione dall'ultima valutazione da Sell/Candidate a Hold/Accumulate.\n\nFactset ha raccolto le seguenti stime degli analisti:\nBUY: 17 su 28\nOVERWEIGHT: 3 su 28\nHOLD: 8 su 28\n\nRedazione MarketWall",
+      "url": "",
+      "mediaref": "787-10_wallpaper_red2.jpg",
+      "timestamp": 1526987672,
+      "agency": "MarketWall",
+      "language": "it",
+      "type": "small",
+      "showPopup": true,
+      "isin": "FC:P8WJT7-S-US.FCST",
+      "published": 1526634300,
+      "showInCarousel": false,
+      "strpublished": "Fri May 18 2018"
+    }];
+    handleContent(window.location.pathname);
+  </script>
+</body>
+
 </html>
