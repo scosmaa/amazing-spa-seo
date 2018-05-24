@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta class="meta-dsc" name="description" content"">
+  <meta name="fragment" content="!">
   <title></title>
 
   <!-- update the version number as needed -->
@@ -66,6 +68,11 @@
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 main-content">
       </main>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 text-center">I contenuti presenti in questo sito sono stati presi dal portale di finanza <a href="https://www.markethub.it">www.markethub.it</a></div>
+        </div>
+      </div>
     </div>
   </div>
   <script>
@@ -111,7 +118,8 @@
     }
 
     function showPage(data) {
-      var content = document.querySelector('.main-content');
+      var content = document.querySelector('.main-content'),
+      metaDsc = document.querySelector('.meta-dsc');
       content.innerHTML = '';
       document.title = '';
 
@@ -119,11 +127,17 @@
         content.innerHTML =
           "Questo sito contiene delle prove per verificare le principali tecniche di indicizzazione nell'ambito delle Single Page Application";
           document.title = "Amazing SPA Seo";
+          metaDsc.content = "Questo sito contiene delle prove per verificare le principali tecniche di indicizzazione nell'ambito delle Single Page Application";
+
           return
       }
-      
-      var article = '<h1>' + data.subject + '</h1>';
+      var article = '<div class="container-fluid">';
+      article += '<div class="col-md-12"><h1>' + data.subject + '</h1></div>';
+      article += '<img class="offset-md-3 col-md-6" src="https://www.markethub.it/media/webnews/' + data.mediaref + '" title="' + data.subject + '"></img>'; 
+      article += '<div class="col-md-12"><p>' + data.body + '</p></div>';
+      article += '</div>';
       content.innerHTML = article;
+      metaDsc.content = data.body.split('\n')[0];
       document.title = 'NEWS - ' + data.subject;
     };
     
