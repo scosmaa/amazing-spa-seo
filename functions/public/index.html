@@ -20,6 +20,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta class="meta-dsc" name="description" content"">
   <meta name="fragment" content="!">
+  <meta class="twitter-title" property="og:title" content="!">
+  <meta class="twitter-dsc" property="og:description" content="!">
+  <meta class="twitter-img" property="og:image" content="!">
   <title></title>
 
   <!-- update the version number as needed -->
@@ -156,9 +159,9 @@
       article += '</div>';
       content.innerHTML = article;
       metaDsc.content = data.body.split('\n')[0];
-      // twitterTitle.content = data.subject; 
-      // twitterDsc.content = data.body.split('\n')[0]; 
-      // twitterImg.content = 'https://www.markethub.it/media/webnews/' + data.mediaref;
+      twitterTitle.content = data.subject; 
+      twitterDsc.content = data.body.split('\n')[0]; 
+      twitterImg.content = 'https://www.markethub.it/media/webnews/' + data.mediaref;
 
       document.title = 'NEWS - ' + data.subject;
     };
